@@ -14,6 +14,13 @@ server.post("/", async (req, res) => {
   res.json(dbs);
 });
 
+server.post("/aggr", async (req, res) => {
+    const query = req.body.pipeline;
+    const dbs = await db.aggregate(query);
+    // console.log(dbs);
+    res.json(dbs);
+  });
+
 
 server.listen(PORT, () => {
   console.log(`Listening to the port ${PORT}`);
