@@ -4,8 +4,8 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 3001;
 const server = express();
-server.use(express.json());
 server.use(cors());
+server.use(express.json());
 
 server.post("/", async (req, res) => {
   const query = req.body;
